@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mykit-consurrent-chapter01</artifactId>
+    <artifactId>mykit-concurrent-chapter01</artifactId>
 
     <build>
         <plugins>
@@ -28,7 +28,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>io.binghe.consurrent.chapter01.ProcessThreadTest</mainClass>
+                            <mainClass>io.binghe.concurrent.chapter01.ProcessThreadTest</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

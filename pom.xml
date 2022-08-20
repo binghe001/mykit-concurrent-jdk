@@ -22,6 +22,6 @@
         </plugins>
     </build>
     <modules>
-        <module>mykit-consurrent-chapter01</module>
+        <module>mykit-concurrent-chapter01</module>
     </modules>
 </project>
