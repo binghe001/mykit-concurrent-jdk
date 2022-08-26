@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.binghe.consurrent.chapter02;
+package io.binghe.concurrent.chapter02;
 
 import java.util.Date;
 import java.util.stream.IntStream;
@@ -29,7 +29,7 @@ public class ThreadHandlerTest {
     public static void main1(String[] args){
         Thread thread = new Thread(() -> {
             System.out.println("子线程名称===>> " + Thread.currentThread().getName());
-        },"binghe-thread-002");
+        },"binghe-thread");
         thread.start();
         System.out.println("主线程名称===>> " + Thread.currentThread().getName());
     }
@@ -38,13 +38,13 @@ public class ThreadHandlerTest {
         Thread thread = new Thread(() -> {
             System.out.println("子线程名称===>> " + Thread.currentThread().getName());
         });
-        thread.setName("binghe-thread-002");
+        thread.setName("binghe-thread");
         thread.start();
         System.out.println("主线程名称===>> " + Thread.currentThread().getName());
     }
 
     public static void main3(String[] args){
-        Thread thread = new Thread(new ThreadGroup("binghe-thread-002-group"),() -> {
+        Thread thread = new Thread(new ThreadGroup("binghe-thread-group"),() -> {
             System.out.println("子线程名称===>> " + Thread.currentThread().getName());
         });
         thread.start();
@@ -176,8 +176,8 @@ public class ThreadHandlerTest {
     }
 
     public static void main11(String[] args) throws InterruptedException {
-        ThreadGroup threadGroup = new ThreadGroup("binghe-thread-group-002");
-        ThreadGroup subThreadGroup = new ThreadGroup(threadGroup,"binghe-sub-thread-group-002");
+        ThreadGroup threadGroup = new ThreadGroup("binghe-thread-group");
+        ThreadGroup subThreadGroup = new ThreadGroup(threadGroup,"binghe-sub-thread-group");
         Thread thread1 = new Thread(threadGroup, () -> {
             System.out.println("子线程名称===>> " + Thread.currentThread().getName());
             try {
@@ -204,8 +204,8 @@ public class ThreadHandlerTest {
     }
 
     public static void main12(String[] args) throws InterruptedException {
-        ThreadGroup threadGroup = new ThreadGroup("binghe-thread-group-002");
-        ThreadGroup subThreadGroup = new ThreadGroup(threadGroup,"binghe-sub-thread-group-002");
+        ThreadGroup threadGroup = new ThreadGroup("binghe-thread-group");
+        ThreadGroup subThreadGroup = new ThreadGroup(threadGroup,"binghe-sub-thread-group");
         Thread thread1 = new Thread(threadGroup, () -> {
             System.out.println("子线程名称===>> " + Thread.currentThread().getName());
             try {
@@ -217,7 +217,7 @@ public class ThreadHandlerTest {
         Thread thread2 = new Thread(subThreadGroup, () -> {
             System.out.println("子线程名称===>> " + Thread.currentThread().getName());
             //加入到subThreadGroup线程组中
-            ThreadGroup thread2Group = new ThreadGroup("binghe-thread2-group-002");
+            ThreadGroup thread2Group = new ThreadGroup("binghe-thread2-group");
             try {
                 Thread.currentThread().sleep(1000);
             } catch (InterruptedException e) {
@@ -241,9 +241,9 @@ public class ThreadHandlerTest {
     }
 
     public static void main14(String[] args) {
-        ThreadGroup threadGroup = new ThreadGroup("binghe-thread-group-002");
+        ThreadGroup threadGroup = new ThreadGroup("binghe-thread-group");
         System.out.println("threadGroup线程组中活跃的线程组数量为===>> " + threadGroup.activeGroupCount());
-        ThreadGroup subThreadGroup = new ThreadGroup(threadGroup,"binghe-sub-thread-group-002");
+        ThreadGroup subThreadGroup = new ThreadGroup(threadGroup,"binghe-sub-thread-group");
         System.out.println("threadGroup线程组中活跃的线程组数量为===>> " + threadGroup.activeGroupCount());
     }
 

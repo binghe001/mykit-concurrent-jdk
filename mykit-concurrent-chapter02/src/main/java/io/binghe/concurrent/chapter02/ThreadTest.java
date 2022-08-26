@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.binghe.consurrent.chapter02;
+package io.binghe.concurrent.chapter02;
 
 import org.junit.Test;
 
