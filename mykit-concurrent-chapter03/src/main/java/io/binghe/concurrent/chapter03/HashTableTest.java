@@ -21,13 +21,13 @@ import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
-import java.util.Vector;
+import java.util.Hashtable;
 import java.util.concurrent.TimeUnit;
 
 /**
  * @author binghe
  * @version 1.0.0
- * @description 使用JMH对vector进行基准测试
+ * @description 使用JMH对Hashtable进行基准测试
  */
 @Fork(1)
 @Measurement(iterations = 5)
@@ -36,37 +36,36 @@ import java.util.concurrent.TimeUnit;
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
 @Threads(value = 5)
 @State(Scope.Benchmark)
-public class VectorTest {
+public class HashTableTest {
     /**
      * 测试的元素
      */
     private static final String ELEMENT_DATA = "binghe";
 
-    private Vector<String> vector;
+    private Hashtable<String, String> hashtable;
 
     @Setup
     public void setup(){
-        this.vector = new Vector<>();
-        vector.add(ELEMENT_DATA);
+        this.hashtable = new Hashtable<>();
     }
 
     @Benchmark
-    public void addElement(){
-        vector.add(ELEMENT_DATA);
+    public void putElement(){
+        hashtable.put(ELEMENT_DATA, ELEMENT_DATA);
     }
 
     @Benchmark
     public void getElement(){
-        vector.get(0);
+        hashtable.get(ELEMENT_DATA);
     }
 
     @Benchmark
     public void removeElement(){
-        vector.remove(ELEMENT_DATA);
+        hashtable.remove(ELEMENT_DATA);
     }
 
     public static void main(String[] args) throws RunnerException {
-        final Options opts = new OptionsBuilder().include(VectorTest.class.getSimpleName()).build();
+        final Options opts = new OptionsBuilder().include(HashTableTest.class.getSimpleName()).build();
         new Runner(opts).run();
     }
 }

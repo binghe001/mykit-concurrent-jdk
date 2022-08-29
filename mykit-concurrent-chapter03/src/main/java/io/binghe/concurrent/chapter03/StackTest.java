@@ -30,12 +30,12 @@ import java.util.concurrent.TimeUnit;
  * @description 使用JMH对Stack进行基准测试
  */
 @Fork(1)
-@Measurement(iterations = 1)
-@Warmup(iterations = 1)
+@Measurement(iterations = 5)
+@Warmup(iterations = 3)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
-@Threads(value = 1)
-@State(Scope.Thread)
+@Threads(value = 5)
+@State(Scope.Benchmark)
 public class StackTest {
     /**
      * 测试的元素
