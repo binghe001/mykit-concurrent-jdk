@@ -46,5 +46,6 @@
         <module>mykit-concurrent-chapter01</module>
         <module>mykit-concurrent-chapter02</module>
         <module>mykit-concurrent-chapter03</module>
+        <module>mykit-concurrent-chapter04</module>
     </modules>
 </project>
