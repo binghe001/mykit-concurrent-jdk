@@ -13,30 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.bnghe.concurrent.chapter10;
+package io.binghe.concurrent.chapter10;
 
 import java.util.concurrent.locks.Lock;
 
 /**
  * @author binghe (公众号：冰河技术)
  * @version 1.0.0
- * @description Lock测试案例
+ * @description ReentrantLock对同一线程具有可重入性
+ * 对多个线程具有排它性
  */
-public class LockTask implements Runnable{
+public class ReentrantLockTask implements Runnable{
     private Lock lock;
 
-    public LockTask(Lock lock) {
+    public ReentrantLockTask(Lock lock) {
         this.lock = lock;
     }
 
     @Override
     public void run() {
         lock.lock();
+        String threadName = Thread.currentThread().getName();
+        System.out.println(threadName + "--线程第一次加锁");
+        lock.lock();
+        System.out.println(threadName + "--线程第二次加锁");
         try{
-            System.out.println(Thread.currentThread().getName() + "--线程获取到锁");
-            System.out.println(Thread.currentThread().getName() + "--线程执行任务");
+            System.out.println(threadName + "--线程执行业务逻辑方法");
         }finally {
-            System.out.println(Thread.currentThread().getName() + "--线程释放锁");
+            System.out.println(threadName + "--线程第一次释放锁");
+            lock.unlock();
+            System.out.println(threadName + "--线程第二次释放锁");
             lock.unlock();
         }
     }
