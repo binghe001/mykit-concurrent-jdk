@@ -32,6 +32,7 @@ public class ThreadInterruptTask implements Runnable {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
                 System.out.println("触发InterruptedException异常");
+                //真正退出线程的关键
                 currentThread.interrupt();
             }
         }
