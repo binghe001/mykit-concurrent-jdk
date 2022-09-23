@@ -67,5 +67,7 @@
         <module>mykit-concurrent-chapter11</module>
         <module>mykit-concurrent-chapter12</module>
         <module>mykit-concurrent-chapter13</module>
+        <module>mykit-concurrent-threadpool</module>
+        <module>mykit-concurrent-chapter16</module>
     </modules>
 </project>
