@@ -12,13 +12,14 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-package io.binghe.concurrent.chapter13;
-
-/**
- * @author binghe(公众号：冰河技术)
+ *
+ * @author binghe(公众号 ： 冰河技术)
+ * @description
  * @version 1.0.0
- * @description 占位
  */
-public class Test {
-}
+/**
+ * @author binghe(公众号 ： 冰河技术)
+ * @description
+ * @version 1.0.0
+ */
+package io.binghe.concurrent.chapter13.complete;
