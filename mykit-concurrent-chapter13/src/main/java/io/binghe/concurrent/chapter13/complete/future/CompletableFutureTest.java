@@ -112,8 +112,24 @@ public class CompletableFutureTest {
         System.out.println("最终的结果为===>>> " + future.get());
     }
 
+
+    public void resultTask(){
+        CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() ->  3 * 5)
+                .thenApply((r) -> r / 0)
+                .thenApply((r) -> r * 5)
+                .exceptionally((e) -> {
+                    System.out.println("抛出的异常信息为：" + e.getMessage());
+                    return 0;
+                })
+                .handle((t, u) -> {
+                    System.out.println("结果数据为：" + t);
+                    return t;
+                });
+        System.out.println(future.join());
+    }
+
     public static void main(String[] args) throws Exception {
         CompletableFutureTest completableFutureTest = new CompletableFutureTest();
-        completableFutureTest.orTask();
+        completableFutureTest.resultTask();
     }
 }
