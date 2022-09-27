@@ -12,14 +12,18 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
- * @author binghe(公众号 ： 冰河技术)
- * @description
- * @version 1.0.0
  */
+package io.binghe.concurrent.threadpool;
+
 /**
- * @author binghe(公众号 ： 冰河技术)
- * @description
+ * @author binghe(公众号：冰河技术)
  * @version 1.0.0
+ * @description 自定义线程池接口
  */
-package io.binghe.concurrent;
+public interface CustomExecutor {
+
+    /**
+     * 执行任务
+     */
+    void execute(Runnable task);
+}

@@ -13,22 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.binghe.concurrent.policy;
+package io.binghe.concurrent.test;
 
-
-import io.binghe.concurrent.queue.CustomQueue;
+import io.binghe.concurrent.queue.CustomBlockingQueue;
 import io.binghe.concurrent.threadpool.CustomThreadPoolExecutor;
+
+import java.util.concurrent.TimeUnit;
+import java.util.stream.IntStream;
 
 /**
  * @author binghe(公众号：冰河技术)
  * @version 1.0.0
- * @description 拒绝策略接口
+ * @description 测试自定义线程池
  */
-@FunctionalInterface
-public interface RejectHandler {
-
-    /**
-     * 拒绝任务回调接口
-     */
-    void reject(Runnable r, CustomThreadPoolExecutor executor);
+public class CustomThreadPoolExecutorTest {
+    public static void main(String[] args){
+        CustomThreadPoolExecutor executor = new CustomThreadPoolExecutor(3, 6, 5, TimeUnit.SECONDS, new CustomBlockingQueue<>(8));
+        IntStream.rangeClosed(1, 100).forEach((i) -> {
+            executor.execute(() -> {
+                System.out.println(Thread.currentThread().getName() + "===>>> 正在执行任务");
+            });
+        });
+    }
 }

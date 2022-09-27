@@ -20,9 +20,9 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author binghe(公众号：冰河技术)
  * @version 1.0.0
- * @description 自定义阻塞队列接口
+ * @description 队列接口
  */
-public interface BlockingQueue<T> {
+public interface CustomQueue<T> {
 
     /**
      * 超时获取并移除队列数据
@@ -43,11 +43,15 @@ public interface BlockingQueue<T> {
     /**
      * 向队列中超时添加元素
      */
-    boolean offer(T task, long time, TimeUnit timeUnit);
+    boolean offer(T task, long timeout, TimeUnit timeUnit);
 
     /**
      * 返回队列中元素的个数
      */
     int size();
 
+    /**
+     * 对列容量
+     */
+    int capcity();
 }
