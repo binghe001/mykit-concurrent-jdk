@@ -50,3 +50,7 @@
     <div style="font-size: 9px;">知识星球：冰河技术</div>
     <br/>
 </div>
+
+## ConcurrentLinkedQueue的remove()方法内存泄露
+
+[https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8137185](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8137185)
