@@ -50,7 +50,7 @@
 
 ### 2. 书籍购买
 
-**链接下单**：
+**链接下单**：[https://u.jd.com/izMwOkE](https://u.jd.com/izMwOkE)
 
 本书共 16 章：
 
