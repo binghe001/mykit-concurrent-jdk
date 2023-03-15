@@ -34,7 +34,7 @@
 ### 1. 内容简述
 
 <div align="center">
-    <a href="#" target="_blank">
+    <a href="https://u.jd.com/izMwOkE" target="_blank">
         <img src="https://binghe.gitcode.host/assets/images/knowledge/book/2023-02-20-001-jdk.jpg?raw=true" width="250px">
     </a>
 </div>
